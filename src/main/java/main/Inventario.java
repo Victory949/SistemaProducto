@@ -81,9 +81,31 @@ public class Inventario
         
     }//fin metodo mostrarProductos
     
+    //Metodo para buscar un producto por su codigo
     public void buscarProducto()
     {
+        int buscar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del producto que desea buscar"));
+        boolean noExistente =false;
         
+        for(int i=0;i<p.length;i++)
+       {
+           if(p[i]!=null && p[i].getCodigo()==buscar)
+           {
+               p[i].informacion();
+               
+               noExistente=false;
+               break;
+           }
+           else
+           {
+               noExistente=true;
+           }
+       }
+        
+       if(noExistente==true)
+       {
+            JOptionPane.showMessageDialog(null,"El producto que desea buscar no está dentro del indice");
+       }
     } //fin metodo buscarProducto
     
     public void venderUnidades()
