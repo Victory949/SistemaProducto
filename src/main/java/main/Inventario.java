@@ -110,6 +110,27 @@ public class Inventario
     
     public void venderUnidades()
     {
+        int buscar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del producto que desee vender"));
+        boolean noDisponible = false;
+
+        for (int i = 0; i < p.length; i++) 
+        {
+            if (p[i] != null && p[i].getCodigo() == buscar && p[i].getCantDisponible() > 0) 
+            {
+                p[i].setCantDisponible(p[i].getCantDisponible() - 1);
+                noDisponible = false;
+                break;
+            } 
+            else 
+            {
+                noDisponible = true;
+            }
+        }
+
+        if (noDisponible == true) 
+        {
+            JOptionPane.showMessageDialog(null, "Se han agotado existencias");
+        }
         
     }//fin metodo venderUnidades
     
