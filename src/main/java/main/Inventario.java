@@ -50,13 +50,14 @@ public class Inventario
            //Resultados
            if (codigo >= 0 && precio > 0 && cantP > 0) 
            {
-               JOptionPane.showMessageDialog(null, "¡¡¡No repita códigos!!!");
-               i--;
+               p[i] = new Producto(codigo, cantP, nombre, precio);
+               cant++;
            } 
            else if (codigoRepetido == true) 
            {
-               p[i] = new Producto(codigo, cantP, nombre, precio);
-               cant++;
+               JOptionPane.showMessageDialog(null, "¡¡¡No repita códigos!!!");
+               i--;
+               
            } 
            else 
            {

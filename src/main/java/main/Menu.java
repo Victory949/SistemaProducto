@@ -14,6 +14,7 @@ public class Menu
 {
     //Definir varibles
     private int opcion;
+    private Inventario i;
    
     public void menuPrincipal()
     {
@@ -32,26 +33,63 @@ public class Menu
             switch(opcion)
             {
                 case 1: //Registrar productos
+                    i = new Inventario();
+                    i.registrarProducto();
                     break;
                     
                 case 2: //Mostrar productos
-                    
+                    if(i!=null)
+                    {
+                        i.mostrarProductos();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null,"Registre los pruductos primero");
+                    }
                     break;
                     
                 case 3: //Buscar producto por código
-                    
+                    if(i!=null)
+                    {
+                        i.buscarProducto();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null,"Registre los pruductos primero");
+                    }
                     break;                
                 
                 case 4: //Vender unidades
-
+                    if(i!=null)
+                    {
+                        i.venderUnidades();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null,"Registre los pruductos primero");
+                    }
                     break;                
                 
                 case 5: //Reabastecer producto
-                    
+                    if(i!=null)
+                    {
+                        i.reabastecerProducto();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null,"Registre los pruductos primero");
+                    }
                     break;
 
                 case 6: //Calcular valor total del inventario
-
+                    if(i!=null)
+                    {
+                        i.calcTotal();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null,"Registre los pruductos primero");
+                    }
                     break;
 
                 case 7: //Salir
