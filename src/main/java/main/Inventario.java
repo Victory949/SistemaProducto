@@ -67,8 +67,17 @@ public class Inventario
        
     }//fin metodo registrarProducto
     
+    //Metodo para mostrar los productos registrados
     public void mostrarProductos()
     {
+        for(int i= 0; i<p.length; i++)
+        {
+           if(p[i]!=null)
+           {
+               p[i].informacion();
+               cant++;
+           }
+        }
         
     }//fin metodo mostrarProductos
     
