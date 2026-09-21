@@ -136,12 +136,29 @@ public class Inventario
     
     public void reabastecerProducto()
     {
+        int buscar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo del producto que desee reabastecer"));
         
+        for(int i=0;i<p.length;i++)
+        {
+           if(p[i]!=null && p[i].getCodigo()==buscar && p[i].getCantDisponible()>0)
+           {
+               p[i].setCantDisponible(p[i].getCantDisponible()+1);
+               break;
+           }
+        }
+           
     }//fin metodo reabastecerProducto
     
     public void calcTotal()
     {
+        double total= 0;
         
+        for(int i=0;i<p.length;i++)
+        {
+            total+= p[i].getPrecio()*p[i].getCantDisponible();
+        }
+        
+        JOptionPane.showMessageDialog(null,"El valor total del inventario es de: "+total);
     }//fin metodo calcTotal
     
 }//fin clase Inventario
