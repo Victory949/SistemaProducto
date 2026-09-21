@@ -40,7 +40,7 @@ public class Inventario
 
            for (int k = 0; k < p.length; k++) 
            {
-               if (p[k].getCodigo() == codigo) 
+               if (p[k]!=null && p[k].getCodigo() == codigo) 
                {
                    codigoRepetido = true;
                }
@@ -48,16 +48,15 @@ public class Inventario
            
            
            //Resultados
-           if (codigo >= 0 && precio > 0 && cantP > 0) 
-           {
-               p[i] = new Producto(codigo, cantP, nombre, precio);
-               cant++;
-           } 
-           else if (codigoRepetido == true) 
+           if (codigoRepetido == true) 
            {
                JOptionPane.showMessageDialog(null, "¡¡¡No repita códigos!!!");
                i--;
-               
+           } 
+           else if (codigo >= 0 && precio > 0 && cantP > 0)
+           {
+               p[i] = new Producto(codigo, cantP, nombre, precio);
+               cant++;               
            } 
            else 
            {
@@ -76,7 +75,6 @@ public class Inventario
            if(p[i]!=null)
            {
                p[i].informacion();
-               cant++;
            }
         }
         
