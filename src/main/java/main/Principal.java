@@ -10,7 +10,9 @@ package main;
  */
 public class Principal {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) 
+    {
+        Menu m = new Menu();
+        m.menuPrincipal();
     }
 }//fin clase Principal
